@@ -8,11 +8,11 @@ Google has made inbuilt events and action listener.I have to just go on Resourse
        var ssform=SpreadsheetApp.openByUrl('https://docs.google.com/spreadsheets/d/1o7qXTEI9ixK_Z-Afkb8WBGlj0r1yXEaham0rxdbzRow/edit#gid=736438352');//getting ssform as active(form info) spread sheet
        var sheet = ssform.getSheets()[0];
 
-       var lastRow=getSheetProperty(sheet).lastRow; //getting last row(intiger or number) by my object method
+       var lastRow=getSheetProperty(sheet).lastRow; //getting last row(intiger or number) by getShetProperty Function
        var formRange=sheet.getRange(lastRow,1,1,getSheetProperty(sheet).numColumn).getValues();
           
      
-         var indexFunction=gettingIndexValue(sheet,null,"Choose your semester"); //using my closure function to get index values in spreadsheet  of (column name string, here"Choose your semester") passing argument
+         var indexFunction=gettingIndexValue(sheet,null,"Choose your semester"); //using gettingIndexValue function to get index values in spreadsheet  of (column name string, here"Choose your semester") passing argument
          var indexObj=indexFunction();
          var columnNameIndex=indexObj.columnNameIndex;//we will get column index for string "Choose your semester" from formspreadsheet
     
@@ -292,7 +292,7 @@ function gettingHeaderValues(sem){
 
 
 
-/*function testingObject(){                //**for testing getSheetProperty function un comment this
+/*function testingsheetProperty(){                //**for testing getSheetProperty function un comment this
   
   var sheet1= SpreadsheetApp.openByUrl('https://docs.google.com/spreadsheets/d/1o7qXTEI9ixK_Z-Afkb8WBGlj0r1yXEaham0rxdbzRow/edit#gid=736438352'); 
   var inSheet1=sheet1.getSheetByName("secondSemester");  //taking second semester sheet
@@ -330,7 +330,7 @@ function getSheetProperty(sheet)  //function is used to Access (total number of 
      
 // for testing gettingIndexValue function uncomment this
      
-/*function testingClosure(){ 
+/*function testingIndexValue(){ 
    sheet1= SpreadsheetApp.openByUrl('https://docs.google.com/spreadsheets/d/1o7qXTEI9ixK_Z-Afkb8WBGlj0r1yXEaham0rxdbzRow/edit#gid=736438352'); 
                         inSheet1=sheet1.getSheetByName("secondSemester");
 var funcn=gettingIndexValue(inSheet1,80012,"Enrollment Number");
@@ -343,7 +343,7 @@ var obj=funcn();
 
 function gettingIndexValue(sheet,rollNum,columnName){
   
-  var columnNameIndex1=null; //very useful if function is not getting all arguments or we are not able to roll number, column number,and index values. 
+  var columnNameIndex1=null; //very useful if function is not getting all arguments or we are not able to find  roll number, column number,and index values from spreadsheet.Instead of dummy value it will give them null value
   var rollColumnIndex1=null;                                           //****i should check this new concept of null in case any failure occurs 
   var rollRowIndex1=null;
   
@@ -419,7 +419,7 @@ function gettingIndexValue(sheet,rollNum,columnName){
      
      
      
-     //in progress
+     //in progress,to enhance my code
      /* var total = [];   //try to built sum method completely
    var sum;
     
