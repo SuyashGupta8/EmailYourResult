@@ -67,7 +67,7 @@ function verifyFormEntry(entry1,entry2){  //entry1 checking for only roll number
       if(gettingCellValue(inSheet,entry1,entry2) === "Available" )//cross chrcking student info 1.first by cheking entry1 2.second by checking entry2 3.by checkiing cell value
         
       {
-        return true;
+        return true; // *we can directly use the if stament in formsubmit reply function to make faster our code 
       
     }
   
@@ -94,10 +94,10 @@ function getHtmlFile(RollNo,Sem){
                      +"<p >College Name: <em>"+gettingCellValue(sheet,RollNo,"College Name")+"</em></p>"  
                      
                      +"<p>"
-                         +"<A2>"+"Name:"+gettingCellValue(sheet,RollNo,"Student Name")+"</br>"+"</A2>"
+                         +"<h2>"+"Name:"+gettingCellValue(sheet,RollNo,"Student Name")+"</br>"+"</h2>"
                        +"</p>"
                        +"<p>"
-                         +"<A2>" +"Fathers Name:"+gettingCellValue(sheet,RollNo,"Father Name")+"</A2>"
+                         +"<h2>" +"Fathers Name:"+gettingCellValue(sheet,RollNo,"Father Name")+"</h2>"
                        +"</p>"
                      +"<table color:red border=1px>"
                              +"<thead>"
